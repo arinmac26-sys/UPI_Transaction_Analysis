@@ -32,6 +32,52 @@ Rooted devices show 20.69% fraud versus 1.39% on non-rooted devices — about 14
 08_Source_Data → supplied CSVs
 09_Documentation → ERD and documentation
 
+UPI_Transaction_Analysis_Senior_DA_Project/
+│
+├── 01_Business_Understanding/
+│   ├── Business_Understanding.md
+│   └── UPI_Executive_Story.pptx
+│
+├── 02_Data_Validation_Excel/
+│   └── UPI_Data_Validation.xlsx
+│
+├── 03_SQL_Database/
+│   ├── 01_schema_ddl.sql
+│   └── 02_analytics_queries.sql
+│
+├── 04_Python_Analytics/
+│   └── UPI_Transaction_Analysis.ipynb
+│
+├── 05_PowerBI/
+│   ├── PowerBI_Model_DAX.md
+│   └── Prepared_Tables/
+│       ├── monthly_kpis.csv
+│       ├── device_risk.csv
+│       ├── region_kpis.csv
+│       ├── channel_kpis.csv
+│       ├── merchant_kpis.csv
+│       ├── failure_root_causes.csv
+│       ├── feedback_kpis.csv
+│       ├── alert_kpis.csv
+│       └── monthly_retention.csv
+│
+├── 06_Executive_Report/
+│   └── UPI_Executive_Report.pdf
+│
+├── 07_Visuals/
+│   ├── monthly_transaction_volume.png
+│   ├── fraud_by_device_root.png
+│   ├── failure_reasons.png
+│   └── fraud_by_region.png
+│
+├── 08_Source_Data/
+│   └── [7 supplied CSV files]
+│
+├── 09_Documentation/
+│   └── ER_Diagram.md
+│
+└── README.md
+
 ## Data Quality
 Foreign-key validation: 0 invalid references. Source issues: 969 mobile numbers are not 10 digits and 3,818 merchant-linked transactions precede merchant onboarding dates. Investigate these before production deployment.
 
