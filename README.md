@@ -523,6 +523,170 @@ Fraud Alert → Transaction
 
 ---
 
+---
+
+# 📊 Executive Dashboard Gallery & Interactive Analytics
+
+> **Senior Data Analyst Portfolio Layer:** The Executive Dashboard converts the analytical model into decision-ready KPIs, cross-filtering, trend monitoring and risk segmentation.
+
+## Dashboard Preview
+
+![UPI Executive Dashboard](UPI_Executive_Dashboard_Assets/executive_dashboard_overview.png)
+
+## Executive KPI Cards
+
+| KPI | Current Baseline | Business Use | Dashboard Asset |
+|---|---:|---|---|
+| Total Transactions | **100K** | Monitor overall payment activity and platform scale | [PNG](UPI_Executive_Dashboard_Assets/01_total_transactions.png) |
+| Total Transaction Amount | **₹4.24M** | Track GMV and payment value | [PNG](UPI_Executive_Dashboard_Assets/02_total_transaction_amount.png) |
+| Average Transaction Amount | **₹42.42** | Detect shifts in transaction behavior and value | [PNG](UPI_Executive_Dashboard_Assets/03_avg_transaction_amount.png) |
+| Fraud Rate | **2.00%** | Monitor fraud exposure relative to transaction volume | [PNG](UPI_Executive_Dashboard_Assets/04_fraud_rate.png) |
+| Fraud Transactions | **2K** | Track absolute fraud workload and investigation demand | [PNG](UPI_Executive_Dashboard_Assets/05_fraud_transactions.png) |
+| Failure Rate | **5.87%** | Monitor payment reliability and operational friction | [PNG](UPI_Executive_Dashboard_Assets/06_failure_rate.png) |
+| Failed Transactions | **5.87K** | Quantify failed payment events for root-cause analysis | [PNG](UPI_Executive_Dashboard_Assets/07_failed_transactions.png) |
+| Successful Transactions | **92.14K** | Track successful payment throughput | [PNG](UPI_Executive_Dashboard_Assets/08_successful_transactions.png) |
+
+### KPI Preview Gallery
+
+<p align="center">
+  <img src="UPI_Executive_Dashboard_Assets/01_total_transactions.png" width="48%" />
+  <img src="UPI_Executive_Dashboard_Assets/02_total_transaction_amount.png" width="48%" />
+</p>
+<p align="center">
+  <img src="UPI_Executive_Dashboard_Assets/03_avg_transaction_amount.png" width="48%" />
+  <img src="UPI_Executive_Dashboard_Assets/04_fraud_rate.png" width="48%" />
+</p>
+<p align="center">
+  <img src="UPI_Executive_Dashboard_Assets/05_fraud_transactions.png" width="48%" />
+  <img src="UPI_Executive_Dashboard_Assets/06_failure_rate.png" width="48%" />
+</p>
+<p align="center">
+  <img src="UPI_Executive_Dashboard_Assets/07_failed_transactions.png" width="48%" />
+  <img src="UPI_Executive_Dashboard_Assets/08_successful_transactions.png" width="48%" />
+</p>
+
+## Interactive Visuals
+
+### 1. Transaction Trend
+**Decision question:** How are transaction performance and risk changing over time?
+
+![Transaction Trend](UPI_Executive_Dashboard_Assets/01_transaction_trend.png)
+
+**Interactive behavior**
+- Filter by Region, Device Type, Merchant Type, Status, Transaction Type and Time Period.
+- Cross-highlight related visuals.
+- Compare transaction volume, transaction value, successful transactions, failure rate and fraud rate over time.
+
+---
+
+### 2. Transaction Type Distribution
+**Decision question:** Which payment types contribute most to platform activity?
+
+![Transaction Type Distribution](UPI_Executive_Dashboard_Assets/02_transaction_type_distribution.png)
+
+**Senior Analyst interpretation**
+- Compare the transaction mix across `send`, `receive`, `merchant_payment` and `bill_pay`.
+- Use cross-filtering to determine whether fraud or failure concentration differs by transaction type.
+
+---
+
+### 3. Fraud Rate by Region
+**Decision question:** Which regions require additional fraud monitoring?
+
+![Fraud Rate by Region](UPI_Executive_Dashboard_Assets/03_fraud_rate_by_region.png)
+
+**Interactive behavior**
+- Select a region to filter merchant, device and transaction visuals.
+- Compare absolute fraud transactions with fraud rate to avoid ranking high-volume regions purely by count.
+
+---
+
+### 4. Fraud Rate by Device
+**Decision question:** Which device categories show elevated fraud risk?
+
+![Fraud Rate by Device](UPI_Executive_Dashboard_Assets/04_fraud_rate_by_device.png)
+
+**Interactive behavior**
+- Compare Fraud Transactions, Fraud Amount and Fraud Rate by Device Type.
+- Use Device Type and Region slicers for segment-level investigation.
+
+---
+
+### 5. Top 10 High-Risk Merchants
+**Decision question:** Which merchants should be prioritized for investigation?
+
+![Top 10 High-Risk Merchants](UPI_Executive_Dashboard_Assets/05_top_10_high_risk_merchants.png)
+
+**Interactive behavior**
+- Use the Top-N ranking to focus management attention.
+- Evaluate merchant transaction volume alongside fraud rate and fraud transaction count.
+
+---
+
+### 6. Failure by Device
+**Decision question:** Which device categories contribute most to payment failures?
+
+![Failure by Device](UPI_Executive_Dashboard_Assets/06_failure_by_device.png)
+
+**Interactive behavior**
+- Compare Failed Transactions and Failure Rate by Device Type.
+- Cross-filter with Region, Status and Transaction Type to identify operational root causes.
+
+> **Note:** PNG files are static portfolio previews. The uploaded `.pbix` file is the interactive source of truth for slicers, cross-filtering, drill-down and visual interactions.
+
+## Interactive Slicer Framework
+
+The Executive Dashboard is designed around the following interactive controls:
+
+```text
+Region
+   ↓
+Device Type
+   ↓
+Merchant Type
+   ↓
+Status
+   ↓
+Transaction Type
+   ↓
+Time Period
+```
+
+A selection in any slicer should update KPI cards and connected visuals simultaneously.
+
+## Senior Data Analyst Dashboard Design Principles
+
+### 1. Executive-first hierarchy
+The page starts with KPI cards, then moves from trend analysis to segmentation and risk prioritization.
+
+### 2. Rate + volume together
+Fraud and failure decisions should not rely only on absolute counts. The dashboard combines:
+- **Fraud Transactions + Fraud Rate**
+- **Failed Transactions + Failure Rate**
+- **Transaction Volume + Transaction Value**
+
+### 3. Actionable segmentation
+The dashboard supports investigation by:
+- Region
+- Device Type
+- Merchant / Merchant Type
+- Status
+- Transaction Type
+- Time Period
+
+### 4. Cross-filtering for root-cause analysis
+A senior analyst should be able to start from a KPI anomaly and progressively narrow the problem:
+`KPI → Trend → Segment → Merchant/Device → Root Cause → Action`.
+
+### 5. Portfolio-ready documentation
+Each visual should clearly answer:
+- What business question does it answer?
+- What decision can be made from it?
+- Which filters change the result?
+- What metric definitions are used?
+- What action follows an adverse signal?
+
+
 # Strategic Recommendations
 
 ## 1. Targeted Device Risk Controls
